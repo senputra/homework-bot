@@ -11,13 +11,15 @@ app.use(
 ) // for parsing application/x-www-form-urlencoded
 
 //This is the route the API will call
-app.post('/new-message', function(req, res) {
-  const { message } = req.body
+app.post('/', function(req, res) {
+  const message  = req.body
     
   //Each message contains "text" and a "chat" object, which has an "id" which is the chat id
+  console.log("something")
 
   if (!message || message.text.toLowerCase().indexOf('marco') < 0) {
     // In case a message is not present, or if our message does not have the word marco in it, do nothing and return an empty response
+    console.log("something")
     return res.end()
   }
 
